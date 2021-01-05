@@ -1,0 +1,51 @@
+            <table class="table table-bordered table hover">
+                <thead>
+                    <tr>
+                        <td>Nome</td>
+                        <td>Descrição</td>
+                        <td>Preço</td>
+                        <td>Quantidade</td>
+                        <td colspan="1">
+                    </tr>
+                </thead>
+                <tbody>
+        
+                <%@produto.each do |produto|%>
+                    <tr>    
+                        <td><%=produto.nome%></td>
+                        <td><%=produto.descricao%></td>
+                        <td><%=produto.preco%></td>
+                        <td><%=produto.quantidade%></td>
+                        <td class="btn btn-danger" ><%= link_to "Remover", produto, method: :delete,
+                        data:{confirm:"Tem certeza que deseja deletar este produto #{produto.nome}?"}
+                        %></td>
+                    </tr>
+                    <% end %>
+                    
+                </tbody>
+            </table>
+            <div class="alert alert-sucess" role="alert">
+                <h3 class="alert-heading">Produto com desconto</h3>
+            </div>
+                <table class="table table-bordered table hover">
+                <thead>
+                    <tr>
+                        <td>Nome</td>
+                        <td>Descrição</td>
+                        <td>Preço</td>
+                        <td>Quantidade</td>
+                    </tr>
+                </thead>
+                <tbody>
+                <%@produto_preco.each do |produto|%>
+                    <tr>
+                        <td><%=produto.nome%></td>
+                        <td><%=produto.descricao%></td>
+                        <td><%=produto.preco%></td>
+                        <td><%=produto.quantidade%></td>
+                    </tr>
+                    <% end %>
+                    
+                </tbody>
+            </table>
+    
